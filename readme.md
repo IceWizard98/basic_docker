@@ -31,8 +31,7 @@ A simple and configurable Docker environment for PHP development. This repositor
 .
 ├── docker/
 │   ├── nginx/
-│   │
-└── vhost/
+│   │   └── vhost/
 │   │       └── site.conf
 │   └── php/
 │       ├── conf.d/
