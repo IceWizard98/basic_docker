@@ -1,0 +1,42 @@
+services:
+  php:
+    build: ./docker/php
+    ports:
+      - "${PHP_FPM_HOST_PORT-9000}:9000"
+    volumes:
+      # configurations
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/php-fpm.conf:/usr/local/etc/php/php-fpm.conf
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+      # program files
+      - ./:/var/site/
+    environment:
+      - PHP_IDE_CONFIG=serverName=${DOMAIN-site.test}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./docker/nginx/vhost:/etc/nginx/conf.d
+      - ./:/var/site/
+    depends_on:
+      - php
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nginx.rule=Host(`${DOMAIN-site.test}`)
+      - traefik.http.routers.nginx.entrypoints=websecure
+      - traefik.http.routers.nginx.tls.certresolver=letsencrypt
+      - traefik.http.services.nginx.loadbalancer.server.port=${NGINX_HOST_PORT-80}
+
+  traefik:
+    image: traefik:latest
+    ports:
+      - "80:80"
+      - "443:443"
+      - "${TRAEFIK_HOST_PORT-8080}:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./letsencrypt:/letsencrypt
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro

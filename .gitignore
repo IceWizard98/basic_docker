@@ -1,0 +1,8 @@
+.idea/
+.env
+.DS_Store
+letsencrypt
+.php-cs-fixer.php
+.php-cs-fixer.cache
+psalm.xml
+intelephense.json
