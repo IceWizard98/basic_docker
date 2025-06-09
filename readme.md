@@ -1,7 +1,7 @@
 # Basic Docker Environment
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/icewizard98/basic_docker?style=social)
-![GitHub license](https://img.shields.io/github/license/icewizard98/basic_docker)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub last commit](https://img.shields.io/github/last-commit/icewizard98/basic_docker)
 ![GitHub issues](https://img.shields.io/github/issues/icewizard98/basic_docker)
 
