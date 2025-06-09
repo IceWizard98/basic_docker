@@ -1,9 +1,9 @@
 # Basic Docker Environment
 
-![GitHub Repo stars](https://img.shields.io/github/stars/yourusername/basic_docker?style=social)
-![GitHub license](https://img.shields.io/github/license/yourusername/basic_docker)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/basic_docker)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/basic_docker)
+![GitHub Repo stars](https://img.shields.io/github/stars/icewizard98/basic_docker?style=social)
+![GitHub license](https://img.shields.io/github/license/icewizard98/basic_docker)
+![GitHub last commit](https://img.shields.io/github/last-commit/icewizard98/basic_docker)
+![GitHub issues](https://img.shields.io/github/issues/icewizard98/basic_docker)
 
 A simple and configurable Docker environment for PHP development. This repository provides a basic configuration that can be easily extended to support different development projects.
 
@@ -51,7 +51,7 @@ A simple and configurable Docker environment for PHP development. This repositor
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/basic_docker.git
+   git clone https://github.com/icewizard98/basic_docker.git
    cd basic_docker
    ```
 
